@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدفع بفودافون كاش</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#d50000,#ff3b3b);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.card{
+background:#fff;
+width:100%;
+max-width:420px;
+padding:35px;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+text-align:center;
+}
+
+.logo{
+width:80px;
+height:80px;
+background:#e60000;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+font-size:36px;
+color:#fff;
+margin-bottom:18px;
+}
+
+h1{
+font-size:28px;
+color:#222;
+margin-bottom:10px;
+}
+
+.desc{
+color:#777;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fafafa;
+padding:14px;
+border-radius:14px;
+margin-bottom:14px;
+border:1px solid #eee;
+}
+
+.num{
+font-weight:700;
+font-size:16px;
+direction:ltr;
+}
+
+.copy{
+background:#e60000;
+color:#fff;
+border:none;
+padding:10px 22px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
+transition:.25s;
+}
+
+.copy:hover{
+background:#c40000;
+}
+
+.success{
+margin:20px 0;
+color:#16a34a;
+font-weight:bold;
+height:24px;
+}
+
+.open{
+display:block;
+width:100%;
+background:#111;
+color:#fff;
+text-decoration:none;
+padding:16px;
+border-radius:14px;
+font-size:18px;
+font-weight:bold;
+margin-top:12px;
+transition:.25s;
+}
+
+.open:hover{
+background:#000;
+}
+
+.note{
+margin-top:18px;
+font-size:14px;
+color:#777;
+line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">💳</div>
+
+<h1>الدفع بفودافون كاش</h1>
+
+<div class="desc">
+اختر الرقم المطلوب ثم اضغط نسخ، وبعدها افتح تطبيق Vodafone Cash.
+</div>
+
+<div class="item">
+<div class="num">01020932049</div>
+<button class="copy" onclick="copyNumber('01020932049',1)">نسخ</button>
+</div>
+
+<div class="item">
+<div class="num">01055332412</div>
+<button class="copy" onclick="copyNumber('01055332412',2)">نسخ</button>
+</div>
+
+<div class="success" id="msg"></div>
+
+<a class="open" href="https://vf.eg/vfcash" target="_blank">
+📱 فتح Vodafone Cash
+</a>
+
+<div class="note">
+إذا لم يفتح التطبيق تلقائيًا، افتحه يدويًا ثم اختر
+<strong>تحويل أموال</strong>
+وألصق الرقم الذي نسخته.
+</div>
+
+</div>
+
+<script>
+
+function copyNumber(number,index){
+
+navigator.clipboard.writeText(number);
+
+document.getElementById("msg").innerHTML=
+"✅ تم نسخ الرقم " + index;
+
+setTimeout(function(){
+
+document.getElementById("msg").innerHTML="";
+
+},2500);
+
+}
+
+</script>
+
+</body>
+</html>
